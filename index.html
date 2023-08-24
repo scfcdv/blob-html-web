@@ -1,0 +1,15 @@
+<title>blob版web-html出力</title>
+<link rel="icon" href="https://scfcdv.github.io/homeweb2/favicon.ico">
+<script>
+function getInputValue() {
+  var input = document.getElementById("input");
+  var inputValue = input.value;
+  var blob = new Blob([inputValue], {type: "text/html"});
+  var url = URL.createObjectURL(blob);
+  var link = document.getElementById("link");
+  link.href = url;
+  link.target = "_blank";}
+</script>
+<textarea id="input" rows="50" cols="150"></textarea>
+<button id="button" onclick="getInputValue()">開く</button>
+<a id="link">ここをクリックして別のタブで開く</a>
